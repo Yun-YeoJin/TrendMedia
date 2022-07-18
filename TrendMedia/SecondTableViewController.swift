@@ -4,11 +4,16 @@ import UIKit
 
 class SecondTableViewController: UITableViewController {
     
-    var NewSection = 0
     
     var 전체설정 = ["공지사항", "실험실", "버전 정보"]
     var 개인설정 = ["개인/보안", "알림", "채팅", "멀티프로필"]
     var 기타 = ["고객센터/도움말"]
+
+    enum NewSection: Int {
+        case number0
+        case number1
+        case number2
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +28,23 @@ class SecondTableViewController: UITableViewController {
     // Cell의 헤더 설정
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
        
-        if section == 0 {
-            return "전체 설정"
-        } else if section == 1 {
-                return "개인 설정"
-            } else if section == 2 {
-                return "기타"
-            } else {
-                return "헤더"
-            }
+        
+        switch section {
+        case NewSection.number0.rawValue: return "전체 설정"
+        case NewSection.number1.rawValue: return "개인 설정"
+        case NewSection.number2.rawValue: return "기타"
+        default: return "nothing"
+        }
+
+//        if section == 0 {
+//            return "전체 설정"
+//        } else if section == 1 {
+//                return "개인 설정"
+//            } else if section == 2 {
+//                return "기타"
+//            } else {
+//                return "헤더"
+//            }
         
     
         }
@@ -44,16 +57,22 @@ class SecondTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         
-        
-        if section == 0 { // 전체 설정
-            return 3
-        } else if section == 1{ // 개인 설정
-            return 4
-        } else if section == 2{ // 기타
-            return 1
-        } else {
-            return 0
+        switch section {
+        case NewSection.number0.rawValue: return 3
+        case NewSection.number1.rawValue: return 4
+        case NewSection.number2.rawValue: return 1
+        default: return 0
         }
+        
+//        if section == 0 { // 전체 설정
+//            return 3
+//        } else if section == 1{ // 개인 설정
+//            return 4
+//        } else if section == 2{ // 기타
+//            return 1
+//        } else {
+//            return 0
+//        }
     
     }
 
