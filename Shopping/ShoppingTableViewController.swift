@@ -6,6 +6,8 @@ class ShoppingTableViewController: UITableViewController {
 
 
 
+    
+ 
     @IBOutlet weak var AddButton: UIButton!
     @IBOutlet weak var SearchTextField: UITextField! {
         didSet {
@@ -41,6 +43,7 @@ class ShoppingTableViewController: UITableViewController {
         } else if indexPath.row % 2 == 1{
             cell.checkBoxImageView.image = UIImage(systemName: "checkmark.square")
         }
+       
         cell.checkBoxImageView.tintColor = .black
         
         return cell
@@ -62,7 +65,10 @@ class ShoppingTableViewController: UITableViewController {
         }
     }
 
-        
+    @IBAction func favoriteButtonClicked(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+    }
+    
     @IBAction func AddButtonClicked(_ sender: UIButton) {
     
     }
