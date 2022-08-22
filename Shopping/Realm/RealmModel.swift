@@ -10,9 +10,9 @@ import RealmSwift
 
 class ShoppingList: Object {
     
-    @Persisted var checkBox: Bool //제목(필수)
-    @Persisted var shoppingContents: String //내용(필수)
-    @Persisted var favorite: Bool //즐겨찾기(필수)
+    @Persisted var shoppingContents: String
+    @Persisted var checkBox: Bool
+    @Persisted var favorite: Bool
   
     //PK(primary key) : Int, UUID(16byte), ObjectID(12byte)
     @Persisted(primaryKey: true) var objectID: ObjectId

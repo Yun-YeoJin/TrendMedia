@@ -16,7 +16,7 @@ class ShoppingTableViewController: UITableViewController {
     }
     
     var tasks: Results<ShoppingList>!
-    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +24,6 @@ class ShoppingTableViewController: UITableViewController {
         tasks = localRealm.objects(ShoppingList.self).sorted(byKeyPath: "shoppingContents")
         
         AddButtonDesign()
-        
-        AddButton.addTarget(self, action: #selector(AddButtonClicked), for: .touchUpInside)
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        tasks = localRealm.objects(ShoppingList.self).sorted(byKeyPath: "shoppingContents")
-        
         
     }
     
@@ -45,23 +35,30 @@ class ShoppingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingTableViewCell", for: indexPath) as! ShoppingTableViewCell
         
+       
+        
+        if tasks?[indexPath.row].checkBox == false {
+            cell.checkBoxButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+        } else {
+            cell.checkBoxButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+        }
+
+        if tasks?[indexPath.row].favorite == false {
+            cell.favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        } else {
+            cell.favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+        }
+        
         cell.contentsLabel.text = tasks[indexPath.row].shoppingContents
+        
+        cell.checkBoxButton.tag = indexPath.row
+        cell.favoriteButton.tag = indexPath.row
         
         return cell
     }
     
-    @IBAction func AddButtonClicked(_ sender: UIButton) {
-        
-        let task = ShoppingList(shoppingContents: "\(SearchTextField.text ?? "")") // => Record를 추가하는 과정
-        
-        try! localRealm.write {
-            localRealm.add(task) // => Create 하는 과정
-            print("Realm Succeed")
-            self.dismiss(animated: true)
-        }
-        
-        tableView.reloadData()
-        
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -85,4 +82,54 @@ class ShoppingTableViewController: UITableViewController {
         AddButton.setTitle("추가", for: .normal)
         AddButton.tintColor = .black
     }
+    
+    @IBAction func AddButtonClicked(_ sender: UIButton) {
+        
+        let task = ShoppingList(shoppingContents: "\(SearchTextField.text ?? "")") // => Record를 추가하는 과정
+            
+        try! localRealm.write {
+            localRealm.add(task) // => Create 하는 과정
+            tasks = localRealm.objects(ShoppingList.self).sorted(byKeyPath: "shoppingContents")
+            tableView.reloadData()
+        }
+ 
+    }
+    
+    @IBAction func checkBoxButtonClicked(_ sender: UIButton) {
+        
+        let task = tasks?[sender.tag]
+        if task?.checkBox == true {
+            try! localRealm.write {
+                task?.checkBox = false
+                
+            }
+        } else {
+            try! localRealm.write {
+                task?.checkBox = true
+            }
+        }
+        tableView.reloadData()
+        
+    }
+    
+    @IBAction func favoriteButtonClicked(_ sender: UIButton) {
+        
+        let task = tasks?[sender.tag]
+        if task?.favorite == true {
+            try! localRealm.write {
+                task?.favorite = false
+                
+            }
+        } else {
+            try! localRealm.write {
+                task?.favorite = true
+            }
+        }
+        tableView.reloadData()
+        
+        
+    }
+    
+    
 }
+

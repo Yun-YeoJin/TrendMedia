@@ -10,7 +10,8 @@ class ShoppingTableViewCell: UITableViewCell {
         }
     }
     
-    @IBOutlet weak var checkBoxImageView: UIImageView!
+    
+    @IBOutlet weak var checkBoxButton: UIButton!
     
     @IBOutlet weak var contentsLabel: UILabel!
     
