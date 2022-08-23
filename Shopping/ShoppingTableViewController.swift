@@ -15,7 +15,11 @@ class ShoppingTableViewController: UITableViewController {
         }
     }
     
-    var tasks: Results<ShoppingList>!
+    var tasks: Results<ShoppingList>! {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -69,10 +73,23 @@ class ShoppingTableViewController: UITableViewController {
             
             try! localRealm.write {
                 localRealm.delete(tasks[indexPath.row])
-                tableView.reloadData()
             }
         }
         
+    }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let edit = UIContextualAction(style: .normal, title: "수정하기") { action, view, completionHandler in
+            
+            try! self.localRealm.write {
+                self.localRealm.create(ShoppingList.self, value: ["objectID": self.tasks[indexPath.row].objectID, "shoppingContents": "여기에 수정되는 내용이 들어갑니다."], update: .modified)
+            }
+            
+            self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "shoppingContents")
+        }
+        
+        return UISwipeActionsConfiguration(actions: [edit])
     }
     
     func AddButtonDesign() {
@@ -88,7 +105,6 @@ class ShoppingTableViewController: UITableViewController {
         try! localRealm.write {
             localRealm.add(task) // => Create 하는 과정
             tasks = localRealm.objects(ShoppingList.self).sorted(byKeyPath: "shoppingContents")
-            tableView.reloadData()
         }
         
     }
@@ -107,7 +123,6 @@ class ShoppingTableViewController: UITableViewController {
             }
         }
         tableView.reloadData()
-        
     }
     
     @IBAction func favoriteButtonClicked(_ sender: UIButton) {
@@ -124,8 +139,6 @@ class ShoppingTableViewController: UITableViewController {
             }
         }
         tableView.reloadData()
-        
-        
     }
     
     
@@ -140,7 +153,6 @@ extension ShoppingTableViewController: UITextFieldDelegate {
         try! localRealm.write{
             localRealm.add(task)
             tasks = localRealm.objects(ShoppingList.self).sorted(byKeyPath: "shoppingContents")
-            tableView.reloadData()
         }
         
         SearchTextField.text = ""
