@@ -35,6 +35,14 @@ class ShoppingTableViewController: UITableViewController {
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.star"), primaryAction: nil, menu: sortButtonClicked())
         navigationItem.rightBarButtonItem?.tintColor = .black
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "백업/복구", style: .plain, target: self, action: #selector(backupButtonClicked))
+    }
+    
+    @objc func backupButtonClicked() {
+        guard let vc = UIStoryboard(name: "Shopping", bundle: nil).instantiateViewController(withIdentifier: "BackupViewController") as? BackupViewController else {return}
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func sortButtonClicked() -> UIMenu {

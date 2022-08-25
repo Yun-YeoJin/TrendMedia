@@ -7,17 +7,59 @@
 
 import UIKit
 
+import SnapKit
+import Then
 import Zip
 
 class BackupViewController: UIViewController {
 
+    let backupButton = UIButton().then {
+        $0.tintColor = .black
+        $0.layer.cornerRadius = 10
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor.systemMint.cgColor
+        $0.setTitle("백업하기", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
+    }
+    
+    let restoreButton = UIButton().then {
+        $0.tintColor = .black
+        $0.layer.cornerRadius = 10
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor.systemMint.cgColor
+        $0.setTitle("복구하기", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        view.addSubview(backupButton)
+        view.addSubview(restoreButton)
         
-    }
+        
+        backupButton.snp.makeConstraints { make in
+            make.top.equalTo(100)
+            make.leading.equalTo(50)
+            make.trailing.equalTo(-50)
+            make.height.equalTo(100)
+        }
+        
+        restoreButton.snp.makeConstraints { make in
+            make.top.equalTo(backupButton.snp.bottom).offset(50)
+            make.leading.equalTo(50)
+            make.trailing.equalTo(-50)
+            make.height.equalTo(100)
+        }
+        
+        backupButton.addTarget(self, action: #selector(backupButtonClicked), for: .touchUpInside)
+        restoreButton.addTarget(self, action: #selector(restoreButtonClicked), for: .touchUpInside)
+        }
+        
     
-func backupButtonClicked() {
+@objc func backupButtonClicked() {
     
     var urlPaths = [URL]()
     
@@ -63,7 +105,12 @@ func showActivityViewController() {
     self.present(vc, animated: true)
 }
 
-func restoreButtonClicked() {
+@objc func restoreButtonClicked() {
+    
+    let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.archive], asCopy: true)
+    documentPicker.delegate = self
+    documentPicker.allowsMultipleSelection = false
+    self.present(documentPicker, animated: true)
     
 }
 

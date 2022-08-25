@@ -45,6 +45,8 @@
 		AE95184E28B761EF006AADE5 /* Transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE95184D28B761EF006AADE5 /* Transition+Extension.swift */; };
 		AE95185228B76986006AADE5 /* BackupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE95185128B76986006AADE5 /* BackupViewController.swift */; };
 		AE95185528B769E3006AADE5 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = AE95185428B769E3006AADE5 /* Zip */; };
+		AE95185828B76B89006AADE5 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = AE95185728B76B89006AADE5 /* Then */; };
+		AE95185B28B76F2B006AADE5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE95185A28B76F2B006AADE5 /* SnapKit */; };
 		AEB365C828B3580500B6F75D /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB365C728B3580500B6F75D /* RealmModel.swift */; };
 		AEB365CB28B3583000B6F75D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = AEB365CA28B3583000B6F75D /* Realm */; };
 		AEB365CD28B3583000B6F75D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AEB365CC28B3583000B6F75D /* RealmSwift */; };
@@ -99,7 +101,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEB365CD28B3583000B6F75D /* RealmSwift in Frameworks */,
+				AE95185828B76B89006AADE5 /* Then in Frameworks */,
 				AEB365CB28B3583000B6F75D /* Realm in Frameworks */,
+				AE95185B28B76F2B006AADE5 /* SnapKit in Frameworks */,
 				AE71D1732887AE6700B10E6C /* Toast in Frameworks */,
 				AE71D1702887AE4F00B10E6C /* Kingfisher in Frameworks */,
 				AE95185528B769E3006AADE5 /* Zip in Frameworks */,
@@ -240,6 +244,8 @@
 				AEB365CA28B3583000B6F75D /* Realm */,
 				AEB365CC28B3583000B6F75D /* RealmSwift */,
 				AE95185428B769E3006AADE5 /* Zip */,
+				AE95185728B76B89006AADE5 /* Then */,
+				AE95185A28B76F2B006AADE5 /* SnapKit */,
 			);
 			productName = TrendMeida;
 			productReference = AE319F0628852898002265BB /* TrendMedia.app */;
@@ -274,6 +280,8 @@
 				AE71D1712887AE6700B10E6C /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				AEB365C928B3583000B6F75D /* XCRemoteSwiftPackageReference "realm-swift" */,
 				AE95185328B769E3006AADE5 /* XCRemoteSwiftPackageReference "Zip" */,
+				AE95185628B76B88006AADE5 /* XCRemoteSwiftPackageReference "Then" */,
+				AE95185928B76F2B006AADE5 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = AE319F0728852898002265BB /* Products */;
 			projectDirPath = "";
@@ -579,6 +587,22 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		AE95185628B76B88006AADE5 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		AE95185928B76F2B006AADE5 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		AEB365C928B3583000B6F75D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -604,6 +628,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AE95185328B769E3006AADE5 /* XCRemoteSwiftPackageReference "Zip" */;
 			productName = Zip;
+		};
+		AE95185728B76B89006AADE5 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE95185628B76B88006AADE5 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		AE95185A28B76F2B006AADE5 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE95185928B76F2B006AADE5 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 		AEB365CA28B3583000B6F75D /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
