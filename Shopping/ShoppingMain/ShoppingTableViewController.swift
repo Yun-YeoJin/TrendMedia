@@ -31,6 +31,27 @@ class ShoppingTableViewController: UITableViewController {
         
         AddButtonDesign()
         
+        navigationItem.title = "쇼핑목록"
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.star"), primaryAction: nil, menu: sortButtonClicked())
+        navigationItem.rightBarButtonItem?.tintColor = .black
+    }
+    
+    @objc func sortButtonClicked() -> UIMenu {
+        
+        let sortContents = UIAction(title: "가나다순", image: UIImage(systemName: "abc")) { _ in
+            self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "shoppingContents")
+        }
+        let sortCheckBox = UIAction(title: "체크순", image: UIImage(systemName: "checkmark.square.fill")) { _ in
+            self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "checkBox")
+        }
+        let sortFavorite = UIAction(title: "즐겨찾기순", image: UIImage(systemName: "star.fill")) { _ in
+            self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "favorite")
+        }
+        
+        let menu = UIMenu(title: "목록 정렬하기", identifier: nil, options: .destructive, children: [sortContents, sortCheckBox, sortFavorite])
+        
+        return menu
     }
     
     //셀의 갯수 - numberOfRowsInSection

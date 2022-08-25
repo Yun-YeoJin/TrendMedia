@@ -157,11 +157,10 @@
 		AE71D1092886956400B10E6C /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				AE95185028B763AA006AADE5 /* Backup */,
 				AE95184A28B761BD006AADE5 /* Extension */,
 				AEB365C628B357F900B6F75D /* Realm */,
-				AE71D10228868F6900B10E6C /* Shopping.storyboard */,
-				AE71D10C288696F400B10E6C /* ShoppingTableViewCell.swift */,
-				AE71D106288693F000B10E6C /* ShoppingTableViewController.swift */,
+				AE95184F28B7639B006AADE5 /* ShoppingMain */,
 			);
 			path = Shopping;
 			sourceTree = "<group>";
@@ -187,6 +186,23 @@
 				AE71D0F92886453200B10E6C /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		AE95184F28B7639B006AADE5 /* ShoppingMain */ = {
+			isa = PBXGroup;
+			children = (
+				AE71D10228868F6900B10E6C /* Shopping.storyboard */,
+				AE71D10C288696F400B10E6C /* ShoppingTableViewCell.swift */,
+				AE71D106288693F000B10E6C /* ShoppingTableViewController.swift */,
+			);
+			path = ShoppingMain;
+			sourceTree = "<group>";
+		};
+		AE95185028B763AA006AADE5 /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Backup;
 			sourceTree = "<group>";
 		};
 		AEB365C628B357F900B6F75D /* Realm */ = {
