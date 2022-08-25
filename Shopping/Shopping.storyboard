@@ -50,21 +50,21 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="25" reuseIdentifier="ShoppingTableViewCell" rowHeight="44" id="CEB-9x-lju" customClass="ShoppingTableViewCell" customModule="TrendMedia" customModuleProvider="target">
-                                <rect key="frame" x="20" y="158.5" width="374" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="25" reuseIdentifier="ShoppingTableViewCell" rowHeight="81" id="CEB-9x-lju" customClass="ShoppingTableViewCell" customModule="TrendMedia" customModuleProvider="target">
+                                <rect key="frame" x="20" y="158.5" width="374" height="81"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CEB-9x-lju" id="NZW-FW-yBv">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="81"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그립톡 구매하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jjz-jw-d3m">
-                                            <rect key="frame" x="52" y="12" width="107.5" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jjz-jw-d3m">
+                                            <rect key="frame" x="52" y="30.5" width="41.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lG-ck-vwl">
-                                            <rect key="frame" x="337" y="10" width="22" height="24"/>
+                                            <rect key="frame" x="337" y="10" width="22" height="61"/>
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal">
@@ -75,7 +75,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWw-6b-yKk">
-                                            <rect key="frame" x="10" y="10" width="19.5" height="24"/>
+                                            <rect key="frame" x="10" y="10" width="19.5" height="61"/>
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal">
@@ -85,18 +85,25 @@
                                                 <action selector="checkBoxButtonClicked:" destination="S9S-fd-MRG" eventType="touchUpInside" id="VKb-8D-224"/>
                                             </connections>
                                         </button>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZSL-Ll-TY0">
+                                            <rect key="frame" x="269" y="10" width="52" height="61"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="iWw-6b-yKk" firstAttribute="centerY" secondItem="NZW-FW-yBv" secondAttribute="centerY" id="1Rq-ir-Tkd"/>
                                         <constraint firstAttribute="trailing" secondItem="2lG-ck-vwl" secondAttribute="trailing" constant="15" id="4Do-9z-C6R"/>
+                                        <constraint firstItem="ZSL-Ll-TY0" firstAttribute="width" secondItem="2lG-ck-vwl" secondAttribute="height" multiplier="52:61" id="5kB-Mg-fl0"/>
                                         <constraint firstItem="iWw-6b-yKk" firstAttribute="leading" secondItem="NZW-FW-yBv" secondAttribute="leading" constant="10" id="DTK-CJ-dvz"/>
                                         <constraint firstAttribute="bottom" secondItem="2lG-ck-vwl" secondAttribute="bottom" constant="10" id="Fjd-69-Xsw"/>
+                                        <constraint firstItem="ZSL-Ll-TY0" firstAttribute="top" secondItem="2lG-ck-vwl" secondAttribute="top" id="M77-dC-jCf"/>
                                         <constraint firstItem="Jjz-jw-d3m" firstAttribute="leading" secondItem="iWw-6b-yKk" secondAttribute="trailing" constant="22.5" id="R9N-TQ-kpL"/>
                                         <constraint firstItem="Jjz-jw-d3m" firstAttribute="centerY" secondItem="NZW-FW-yBv" secondAttribute="centerY" id="ShE-31-Omk"/>
+                                        <constraint firstItem="ZSL-Ll-TY0" firstAttribute="bottom" secondItem="2lG-ck-vwl" secondAttribute="bottom" id="T6B-yx-IRX"/>
+                                        <constraint firstItem="ZSL-Ll-TY0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jjz-jw-d3m" secondAttribute="trailing" constant="16" id="WfX-zK-kup"/>
                                         <constraint firstAttribute="bottom" secondItem="iWw-6b-yKk" secondAttribute="bottom" constant="10" id="aIF-gk-Htk"/>
                                         <constraint firstItem="2lG-ck-vwl" firstAttribute="centerY" secondItem="NZW-FW-yBv" secondAttribute="centerY" id="dFa-Vx-u5j"/>
                                         <constraint firstItem="2lG-ck-vwl" firstAttribute="top" secondItem="NZW-FW-yBv" secondAttribute="top" constant="10" id="fHx-Hn-xji"/>
-                                        <constraint firstItem="2lG-ck-vwl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jjz-jw-d3m" secondAttribute="trailing" constant="22.5" id="n1C-X4-sod"/>
+                                        <constraint firstItem="2lG-ck-vwl" firstAttribute="leading" secondItem="ZSL-Ll-TY0" secondAttribute="trailing" constant="16" id="oXE-2C-PCc"/>
                                         <constraint firstItem="iWw-6b-yKk" firstAttribute="top" secondItem="NZW-FW-yBv" secondAttribute="top" constant="10" id="xKW-NR-3hP"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -105,6 +112,8 @@
                                     <outlet property="checkBoxButton" destination="iWw-6b-yKk" id="ODE-97-FWx"/>
                                     <outlet property="contentsLabel" destination="Jjz-jw-d3m" id="qI6-B5-Xty"/>
                                     <outlet property="favoriteButton" destination="2lG-ck-vwl" id="uC8-of-1Hl"/>
+                                    <outlet property="imageView" destination="ZSL-Ll-TY0" id="0NY-kt-UOH"/>
+                                    <outlet property="userImageView" destination="ZSL-Ll-TY0" id="821-ww-C6g"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -42,7 +42,6 @@ class ShoppingTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingTableViewCell", for: indexPath) as! ShoppingTableViewCell
         
         
-        
         if tasks?[indexPath.row].checkBox == false {
             cell.checkBoxButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
         } else {
@@ -56,7 +55,6 @@ class ShoppingTableViewController: UITableViewController {
         }
         
         cell.contentsLabel.text = tasks[indexPath.row].shoppingContents
-        
         cell.checkBoxButton.tag = indexPath.row
         cell.favoriteButton.tag = indexPath.row
         
@@ -75,6 +73,7 @@ class ShoppingTableViewController: UITableViewController {
                 localRealm.delete(tasks[indexPath.row])
             }
         }
+        tableView.reloadData()
         
     }
     

@@ -17,6 +17,7 @@ class ShoppingTableViewCell: UITableViewCell {
     
     @IBOutlet weak var favoriteButton: UIButton!
 
+    @IBOutlet weak var userImageView: UIImageView!
     
 
     

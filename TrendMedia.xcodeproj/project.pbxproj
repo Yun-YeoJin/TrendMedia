@@ -41,6 +41,8 @@
 		AE71D16D28879E1F00B10E6C /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE71D16C28879E1F00B10E6C /* RecommendCollectionViewCell.swift */; };
 		AE71D1702887AE4F00B10E6C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AE71D16F2887AE4F00B10E6C /* Kingfisher */; };
 		AE71D1732887AE6700B10E6C /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = AE71D1722887AE6700B10E6C /* Toast */; };
+		AE95184C28B761E2006AADE5 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE95184B28B761E2006AADE5 /* FileManager+Extension.swift */; };
+		AE95184E28B761EF006AADE5 /* Transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE95184D28B761EF006AADE5 /* Transition+Extension.swift */; };
 		AEB365C828B3580500B6F75D /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB365C728B3580500B6F75D /* RealmModel.swift */; };
 		AEB365CB28B3583000B6F75D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = AEB365CA28B3583000B6F75D /* Realm */; };
 		AEB365CD28B3583000B6F75D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AEB365CC28B3583000B6F75D /* RealmSwift */; };
@@ -82,6 +84,8 @@
 		AE71D1682887953600B10E6C /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 		AE71D16A28879AB100B10E6C /* RecommendCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewController.swift; sourceTree = "<group>"; };
 		AE71D16C28879E1F00B10E6C /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
+		AE95184B28B761E2006AADE5 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		AE95184D28B761EF006AADE5 /* Transition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extension.swift"; sourceTree = "<group>"; };
 		AEB365C728B3580500B6F75D /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		AEF685162888E75100BABA4D /* TrendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,7 +144,6 @@
 				AE319F212885294F002265BB /* SecondTableViewController.swift */,
 				AE319F1D288528D0002265BB /* TableViewController.swift */,
 				AE71D0FB2886478F00B10E6C /* UITextField+Extension.swift */,
-				AE71D0F92886453200B10E6C /* UIViewController+Extension.swift */,
 				AE319F0928852898002265BB /* AppDelegate.swift */,
 				AE319F0B28852898002265BB /* SceneDelegate.swift */,
 				AE319F0D28852898002265BB /* ViewController.swift */,
@@ -154,6 +157,7 @@
 		AE71D1092886956400B10E6C /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				AE95184A28B761BD006AADE5 /* Extension */,
 				AEB365C628B357F900B6F75D /* Realm */,
 				AE71D10228868F6900B10E6C /* Shopping.storyboard */,
 				AE71D10C288696F400B10E6C /* ShoppingTableViewCell.swift */,
@@ -173,6 +177,16 @@
 				AE71D15E2887804E00B10E6C /* Setting2.storyboard */,
 			);
 			path = "New Setting";
+			sourceTree = "<group>";
+		};
+		AE95184A28B761BD006AADE5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AE95184B28B761E2006AADE5 /* FileManager+Extension.swift */,
+				AE95184D28B761EF006AADE5 /* Transition+Extension.swift */,
+				AE71D0F92886453200B10E6C /* UIViewController+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		AEB365C628B357F900B6F75D /* Realm */ = {
@@ -278,11 +292,13 @@
 				AE319F1E288528D0002265BB /* TableViewController.swift in Sources */,
 				AE71D1112886A94B00B10E6C /* SearchTableViewController.swift in Sources */,
 				AE71D0EE2886305A00B10E6C /* NewSettingTableViewController.swift in Sources */,
+				AE95184E28B761EF006AADE5 /* Transition+Extension.swift in Sources */,
 				AE71D10D288696F400B10E6C /* ShoppingTableViewCell.swift in Sources */,
 				AE71D16D28879E1F00B10E6C /* RecommendCollectionViewCell.swift in Sources */,
 				AE71D1692887953700B10E6C /* MovieInfo.swift in Sources */,
 				AE319F0E28852898002265BB /* ViewController.swift in Sources */,
 				AE71D107288693F000B10E6C /* ShoppingTableViewController.swift in Sources */,
+				AE95184C28B761E2006AADE5 /* FileManager+Extension.swift in Sources */,
 				AE71D0FC2886478F00B10E6C /* UITextField+Extension.swift in Sources */,
 				AE71D15C2887800200B10E6C /* Setting2.swift in Sources */,
 				AEB365C828B3580500B6F75D /* RealmModel.swift in Sources */,
