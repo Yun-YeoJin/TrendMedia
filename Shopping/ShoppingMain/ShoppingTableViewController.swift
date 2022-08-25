@@ -37,6 +37,7 @@ class ShoppingTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem?.tintColor = .black
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "백업/복구", style: .plain, target: self, action: #selector(backupButtonClicked))
+        navigationItem.leftBarButtonItem?.tintColor = .black
     }
     
     @objc func backupButtonClicked() {
@@ -79,15 +80,26 @@ class ShoppingTableViewController: UITableViewController {
         
         if tasks?[indexPath.row].favorite == false {
             cell.favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+            cell.userImageView.image = UIImage(systemName: "tortoise.fill")
         } else {
             cell.favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            cell.userImageView.image = UIImage(systemName: "hare.fill")
         }
         
+        cell.userImageView.tintColor = .black
         cell.contentsLabel.text = tasks[indexPath.row].shoppingContents
         cell.checkBoxButton.tag = indexPath.row
         cell.favoriteButton.tag = indexPath.row
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let vc = UIStoryboard(name: "Shopping", bundle: nil).instantiateViewController(withIdentifier: "ShoppingListDetailViewController") as? ShoppingListDetailViewController else {return}
+      
+        self.present(vc, animated: true)
+        
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

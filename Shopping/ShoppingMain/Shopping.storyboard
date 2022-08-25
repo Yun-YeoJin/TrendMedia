@@ -134,6 +134,21 @@
             </objects>
             <point key="canvasLocation" x="2317.3913043478265" y="102.45535714285714"/>
         </scene>
+        <!--Shopping List Detail View Controller-->
+        <scene sceneID="3nh-Tm-r7k">
+            <objects>
+                <viewController storyboardIdentifier="ShoppingListDetailViewController" id="o8g-hn-DP1" customClass="ShoppingListDetailViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hp1-nj-PAI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="btv-Dh-AsL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c1o-d8-HQa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2317" y="788"/>
+        </scene>
         <!--Backup View Controller-->
         <scene sceneID="acx-h6-bEm">
             <objects>
