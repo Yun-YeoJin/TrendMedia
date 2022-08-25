@@ -43,6 +43,8 @@
 		AE71D1732887AE6700B10E6C /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = AE71D1722887AE6700B10E6C /* Toast */; };
 		AE95184C28B761E2006AADE5 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE95184B28B761E2006AADE5 /* FileManager+Extension.swift */; };
 		AE95184E28B761EF006AADE5 /* Transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE95184D28B761EF006AADE5 /* Transition+Extension.swift */; };
+		AE95185228B76986006AADE5 /* BackupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE95185128B76986006AADE5 /* BackupViewController.swift */; };
+		AE95185528B769E3006AADE5 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = AE95185428B769E3006AADE5 /* Zip */; };
 		AEB365C828B3580500B6F75D /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB365C728B3580500B6F75D /* RealmModel.swift */; };
 		AEB365CB28B3583000B6F75D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = AEB365CA28B3583000B6F75D /* Realm */; };
 		AEB365CD28B3583000B6F75D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AEB365CC28B3583000B6F75D /* RealmSwift */; };
@@ -86,6 +88,7 @@
 		AE71D16C28879E1F00B10E6C /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE95184B28B761E2006AADE5 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		AE95184D28B761EF006AADE5 /* Transition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extension.swift"; sourceTree = "<group>"; };
+		AE95185128B76986006AADE5 /* BackupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupViewController.swift; sourceTree = "<group>"; };
 		AEB365C728B3580500B6F75D /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		AEF685162888E75100BABA4D /* TrendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +102,7 @@
 				AEB365CB28B3583000B6F75D /* Realm in Frameworks */,
 				AE71D1732887AE6700B10E6C /* Toast in Frameworks */,
 				AE71D1702887AE4F00B10E6C /* Kingfisher in Frameworks */,
+				AE95185528B769E3006AADE5 /* Zip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +205,7 @@
 		AE95185028B763AA006AADE5 /* Backup */ = {
 			isa = PBXGroup;
 			children = (
+				AE95185128B76986006AADE5 /* BackupViewController.swift */,
 			);
 			path = Backup;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 				AE71D1722887AE6700B10E6C /* Toast */,
 				AEB365CA28B3583000B6F75D /* Realm */,
 				AEB365CC28B3583000B6F75D /* RealmSwift */,
+				AE95185428B769E3006AADE5 /* Zip */,
 			);
 			productName = TrendMeida;
 			productReference = AE319F0628852898002265BB /* TrendMedia.app */;
@@ -267,6 +273,7 @@
 				AE71D16E2887AE4F00B10E6C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				AE71D1712887AE6700B10E6C /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				AEB365C928B3583000B6F75D /* XCRemoteSwiftPackageReference "realm-swift" */,
+				AE95185328B769E3006AADE5 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = AE319F0728852898002265BB /* Products */;
 			projectDirPath = "";
@@ -319,6 +326,7 @@
 				AE71D15C2887800200B10E6C /* Setting2.swift in Sources */,
 				AEB365C828B3580500B6F75D /* RealmModel.swift in Sources */,
 				AE71D1132886AC1F00B10E6C /* SearchTableViewCell.swift in Sources */,
+				AE95185228B76986006AADE5 /* BackupViewController.swift in Sources */,
 				AEF685172888E75100BABA4D /* TrendTableViewController.swift in Sources */,
 				AE71D1632887876800B10E6C /* Setting2TableViewCell.swift in Sources */,
 				AE319F232885294F002265BB /* SecondTableViewController.swift in Sources */,
@@ -563,6 +571,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		AE95185328B769E3006AADE5 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		AEB365C928B3583000B6F75D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -583,6 +599,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AE71D1712887AE6700B10E6C /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		AE95185428B769E3006AADE5 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE95185328B769E3006AADE5 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 		AEB365CA28B3583000B6F75D /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
